@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/logout.css">
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+    <div class="background">
+        <div class="container">
+            <div class="empty-container">
+                <div class="container-imagen">
+                    <img src="/images/logo-reegalo-blue.png" alt="Reegalo" class="logo-navigation">
+                </div>
+                <h2 class="empty-message">Que lástima que te vayas :(</br></br>
+                    ¡Te esperamos pronto!</h2>
+                <a href="/">Volver al inicio <i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

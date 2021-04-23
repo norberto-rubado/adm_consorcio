@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Historial de compras"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/history.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+    <div class="background">
+        <div class="container">
+            <% if(carts.length != 0){ %>
+
+            <div class="cart-content">
+                <table class="cart-product">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th>Fecha de compra</th>
+                                <th>Productos</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <% carts.forEach(cart => { %>
+                        <tr>
+                            <td>
+                                <h4><%= new Date(cart.created_at).toLocaleDateString() %></h4>
+                            </td>
+                            <td>
+                                <ul style="list-style: none;">
+                                    <% cart.items.forEach(function(item) { %>
+                                    <li style="font-size: 12px; text-align: left;">
+                                        <medium>
+                                            <%= item.products.name %> x<%= item.quantity %>
+                                        </medium>
+                                    </li>
+                                    <% }); %>
+                                </ul>
+                            </td>
+                            <td>
+                                <span>$<%= cart.total %></span>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+            <div class="empty-container">
+                <h2 class="empty-message">Todavía no realizaste ninguna compra.</h2>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

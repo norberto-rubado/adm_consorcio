@@ -1,0 +1,96 @@
+<!-- Header del Sitio -->
+
+<script src="/javascript/header.js"></script>
+
+<header class="navigation">
+    <div class="container-header">
+        <div class="container-header-izq">
+            <a href="/" class="logo">
+                <div>
+                    <img src="/images/logo-reegalo-blue.png" alt="Reegalo" class="logo-navigation">
+                </div>
+            </a>
+            <a href="/" class="logo-mini">
+                <div>
+                    <img src="/images/logo-reegalo-mini-blue.png" alt="Reegalo" class="logo-navigation">
+                </div>
+            </a>
+            <nav class="container-navegacion-header">
+                <a href="/productos">Regalos</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/comoregalar">¿Cómo regalar?</a>
+                <% if (locals.user && locals.user.rol=='admin' ) { %>
+                <a href="/productos/administrar">Administrar</a>
+                <% } %>
+            </nav>
+        </div>
+        <div class="container-header-der">
+            <div class="container-buscador">
+                <form action="/productos/busqueda" method="GET" class="search-form">
+                    <input type="text" name="keywords" placeholder="Buscar regalos..." class="search-form_input">
+                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="container-acciones-header">
+                <% if (locals.user) { %>
+                <div style="text-align: center; font-size: small; color: var(--azulreegalo);">
+                    <span>Bienvenid@</span>
+                    <span style="color: var(--azulreegalo); font-family: 'Montserrat-Bold';">
+                        <%= locals.user.email %>
+                    </span>
+                </div>
+                <a href="/usuarios/logout" class="sign-off" alt="Esto no funciona!">Cerrar sesión</a>
+                <% } else { %>
+                <a href="/usuarios/login" class="sign-in">Iniciar sesión</a>
+                <a href="/usuarios/registro" class="sign-up">Registrarse</a>
+                <% } %>
+            </div>
+            <% if (locals.user) { %>
+            <div class="container-perfil">
+                <a href="/usuarios/<%= locals.user.id %>/perfil"><i class="fas fa-user"></i></a>
+            </div>
+            <% } %>
+            <div class="container-carrito">
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                <p class="cantidad-carrito"></p>
+            </div>
+
+            <div class="container-small">
+                <div class="container-acciones-header-small">
+                    <a href="/usuarios/login">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <div class="menu-hamburguesa">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="container-carrito-small">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+
+    <div id="sidebar">
+        <ul class="menu">
+            <li><a href="/productos">Regalos</a></li>
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/comoregalar">¿Cómo regalar?</a></li>
+            <li><a href="/preguntasFrecuentes">Preguntas Frecuentes</a></li>
+            <li><a href="/usuarios/login">Ingresa</a></li>
+            <li><a href="/usuarios/registro">Registrate</a></li>
+            <% if (locals.user !=undefined) { %>
+            <li><a href="/usuarios/<%= locals.user.id %>/perfil">Edicion de Usuario</a></li>
+            <% } %>
+            <% if (locals.user && locals.user.rol=='admin') { %>
+            <li><a href="/productos/administrar">Administrar</a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <!-- Sidebar -->
+
+</header>

@@ -1,0 +1,677 @@
+/* Estilo */
+
+.center-text {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* Estructura */
+
+.d-flex {
+  display: flex;
+}
+
+.flex-direct-row {
+  flex-direction: row;
+}
+
+.flex-grow0-5 {
+  flex-grow: 0.5;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-bet {
+  justify-content: space-between;
+}
+
+.padding-2por {
+  padding: 2%;
+}
+
+.padding-1por {
+  padding: 1%;
+}
+
+.padding-5por {
+  padding: 5%;
+}
+
+.subtitulos {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Banner */
+
+.banner {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.cover {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.banner-letters {
+  box-sizing: border-box;
+  font-size: 2.3em;
+  color: white;
+  font-weight: bolder;
+  padding: 130px;
+  text-shadow: 0.5px 0.5px 0.7px black;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+
+/* Categorias */
+
+div.categorias {
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-shadow: 0.5px 0.5px 0.7px black;
+}
+
+div.categoria-regalo {
+  width: 200px;
+  height: 150px;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  object-fit: scale-down;
+  border-radius: 12px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.categoria-link {
+  color: white;
+  font-size: 1.3em;
+  font-weight: bolder;
+  text-decoration: none;
+  font-style: "Montserrat-SemiBold";
+  text-align: center;
+}
+
+/* Detalle regalo */
+
+.regalo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.ficha-regalo {
+  background-color: white;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  text-align: center;
+  padding: 1%;
+}
+
+.caract-regalo {
+  flex-grow: 1;
+}
+
+.contenedor-imagen {
+  height: 268px;
+}
+
+.imagen-regalo {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.titulo-regalo {
+  font-family: Montserrat-SemiBold;
+  font-size: 1em;
+  color: black;
+  padding: 3vh 0;
+  height: 80px;
+  text-align: left;
+}
+
+.detalle-regalo {
+  font-size: 1em;
+  color: gray;
+  text-align: left;
+  height: 220px;
+}
+
+.puntuacion-regalo {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1%;
+}
+
+.estrella-regalo {
+  color: gold;
+}
+
+.accion-regalo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2vh 0;
+}
+
+.detail {
+  background-color: white;
+  color: var(--azulreegalo);
+  text-align: center;
+  padding: 2%;
+  margin-right: 2%;
+  margin-left: 5%;
+  width: 150px;
+  border: 1px solid var(--azulreegalo);
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.detail:hover {
+  color: var(--azulregalostrong);
+  border: 1px solid var(--azulregalostrong);
+}
+
+.shop {
+  background-color: var(--azulreegalo);
+  color: white;
+  text-align: center;
+  padding: 2%;
+  margin-left: 2%;
+  margin-right: 5%;
+  width: 150px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.shop:hover {
+  background-color: var(--azulregalostrong);
+}
+
+/* Pasos */
+
+.comofunciona {
+  padding: 2%;
+}
+
+.titulo-pasos {
+  text-align: center;
+  padding: 2% 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pasos {
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
+}
+
+.detalle-paso {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-basis: 100%;
+
+}
+
+.descripcion-paso .pasos-titulos {
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.imagen-paso {
+  flex-grow: 0.5;
+  font-size: 5em;
+  margin-bottom: 4%;
+}
+
+.fas.fa-mouse-pointer,
+.fas.fa-gift,
+.far.fa-smile-wink {
+  color: var(--azulregalostrong);
+}
+
+.descripcion-paso {
+  flex-grow: 0.5;
+  text-align: center;
+  margin: 2%;
+  color: gray;
+  font-size: 1em;
+}
+
+.indicador {
+  background-color: var(--gris);
+  padding: 1%;
+  width: 100%;
+  font-size: 30px;
+  font-family: Montserrat-SemiBold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.detalle_producto {
+  font-size: 0.6em;
+  font-family: Montserrat-Regular;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-categoria {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1% 5%;
+}
+
+.container-productos {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  
+}
+
+.container-producto {
+  width: 270px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.product-box {
+  background-color: #ffffff;
+  border-radius: 5px;
+
+  /* sacar la animacion del hover sobre la imagen y dejar fija la descipcion */
+  /*  overflow: hidden;
+    transition: 300ms; */
+
+  margin: 20px 0;
+  height: 100%;
+}
+
+.product-box a {
+  display: block;
+  text-decoration: none;
+}
+
+.product-box_image {
+  border-bottom: 1px solid var(--grisfondo);
+}
+
+.product-box_image img {
+  width: 100%;
+  height: 350px;
+}
+
+.product-box_data {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-box_data h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  font-weight: bold;
+  color: var(--azulresumen);
+}
+
+.product-box_data span {
+  font-size: 0.9em;
+  font-weight: 300;
+  color: var(--verdedescuento);
+  font-weight: bold;
+  margin: 0 0 0 10px;
+}
+
+.product-box_data .product-description {
+  font-size: 0.9em;
+  width: 100%;
+  color: var(--negro);
+  margin: 0;
+
+  /* sacar la animacion del hover sobre la imagen y dejar fija la descipcion */
+  /*  height: 0;
+    transition: 300ms;
+    overflow: hidden; */
+
+}
+
+.product-box_data i {
+  color: var(--azulreegalo);
+  font-size: 1.1em;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  right: 15px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* sacar la animacion del hover sobre la imagen y dejar fija la descipcion */
+  /* transition: 200ms; */
+
+}
+
+.product-box:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.product-name {
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+/* sacar la animacion del hover sobre la imagen y dejar fija la descipcion */
+/* .product-box:hover .product-description {
+    height: 100%;
+    margin-top: 15px;
+  } */
+
+/* Media Queries */
+/* Tablet */
+@media (max-width: 992px) {
+
+  .banner {
+    height: 300px;
+  }
+
+  .banner-letters {
+    font-size: 2em;
+    padding: 75px;
+    top: 65px;
+    left: 10px;
+  }
+
+  .ficha-regalo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 35%;
+    margin: 5%;
+  }
+
+  .contenedor-imagen {
+    height: 150px;
+  }
+
+  .regalo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .detalle-regalo {
+    font-size: 0.8em;
+
+  }
+}
+
+/* Mobile L */
+
+@media (max-width: 425px) {
+
+  .banner {
+    height: 250px;
+  }
+
+  .cover {
+    height: 250px;
+  }
+
+  .banner-letters {
+    font-size: 1.5em;
+    padding: 130px;
+    top: 0px;
+    left: -90px;
+  }
+
+  .ficha-regalo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 50%;
+  }
+
+  .contenedor-imagen {
+    height: 180px;
+  }
+
+  div.categorias {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div.categoria-regalo {
+    width: 130px;
+    height: 50px;
+    margin: 2% 0;
+  }
+
+  .categoria-link {
+    color: white;
+    font-size: 0.7em;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat-SemiBold'
+  }
+
+  .regalo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .detalle-regalo {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+}
+
+/****************** Mobile S ************************/
+
+@media (max-width: 320px) {
+
+  .banner {
+    height: 200px;
+  }
+
+  .cover {
+    height: 200px;
+  }
+
+  .banner-letters {
+    font-size: 1.2em;
+    padding: 100px;
+    top: 15px;
+    left: -80px;
+  }
+
+  div.categorias {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div.categoria-regalo {
+    width: 150px;
+    height: 50px;
+    margin: 2% 0;
+  }
+
+  .categoria-link {
+    font-size: 0.8em;
+    font-family: 'Montserrat-SemiBold'
+  }
+
+  .regalo {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .ficha-regalo {
+    width: 55%;
+    margin: 6%;
+  }
+
+  .titulo-regalo,
+  .detalle-regalo {
+    font-size: 0.3em;
+  }
+
+  .detalle-regalo {
+    margin-bottom: 2%;
+    font-size: 0.5em;
+
+  }
+
+  .titulo-regalo {
+    font-size: 0.7em;
+  }
+
+  /* Pasos */
+
+  .subtitulos {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  .comofunciona {
+    padding: 5% 2%;
+    font-size: 0.7em;
+  }
+
+  .titulo-pasos {
+    font-size: 1em;
+    margin: 2% 0;
+  }
+
+  .pasos {
+    margin: 2% 0;
+  }
+
+  .pasos-titulos {
+    color: black;
+    font-size: 1em;
+  }
+
+  .imagen-paso {
+    flex-grow: 0.5;
+    font-size: 2em;
+    margin-bottom: 4%;
+    padding: 4%;
+  }
+
+  .descripcion-paso {
+    flex-grow: 0.5;
+    text-align: center;
+    margin: 2%;
+    color: grey;
+    font-size: 10px;
+  }
+
+  .descripcion-paso span {
+    font-size: 12;
+  }
+
+  .descripcion-paso p {
+    font-size: 10;
+    color: gray;
+  }
+
+  .eleccion-titulo {
+    font-size: 1em;
+    margin-top: 5%
+  }
+
+  .eleccion-subtitulo {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  .titulo-regalo {
+    font-size: 0.8em;
+    height: 40px;
+  }
+
+  .detalle-regalo {
+    margin-bottom: 2%;
+    font-size: 0.8em;
+  }
+
+  .puntuacion-regalo {
+    font-size: 0.8em;
+  }
+
+  .imagen-regalo {
+    flex-grow: 1;
+    height: 100%px;
+    width: 100%;
+  }
+
+  .contenedor-imagen {
+    height: 150px;
+  }
+
+  .detail,
+  .shop {
+    font-size: 0.8em;
+  }
+}

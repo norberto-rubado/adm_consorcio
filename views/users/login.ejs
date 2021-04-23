@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Login" }) %>
+        <link rel="stylesheet" href="/stylesheets/app.css">
+        <link rel="stylesheet" href="/stylesheets/login.css">
+        <script type="text/javascript" src="../javascript/login.js"></script>
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+        <% if (typeof login_success !='undefined' ) { %>
+            <div class="login-success">
+                <%= login_success %>
+            </div>
+            <% } %>
+
+                <section class="login">
+                    <div class="container">
+                        <div class="header">
+                            <p class="titulo-login">Iniciá sesión en</p>
+                            <div class="container-logo-login">
+                                <img src="/images/logo-reegalo-blue.png" alt="" class="logo-login">
+                            </div>
+                        </div>
+                        <form action="/usuarios/login" method="POST" class="form" id="form" novalidate>
+                            <% if (typeof errors != 'undefined' && errors[0].param=='email') {%> 
+                            <div class="form-control error">
+                            <% } else { %>
+                                <div class="form-control">
+                                <% } %> 
+                                <input type="email" name="email" id="email" placeholder="✉️  Correo electrónico" oninvalid="this.setCustomValidity('El email ingresado no es válido')" />
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <% if (typeof errors != 'undefined') { %>
+                                    <% errors.forEach(function(error) { %>
+                                    <% if (error.param == 'email') { %>
+                                        <small><%= error.msg %></small>
+                                    <% } else { %>
+                                        <small></small>
+                                    <% } %>
+                                    <% })%>
+                                    <% } else { %>
+                                        <small></small>
+                                    <% } %> 
+                            </div>
+                            <% if (typeof errors != 'undefined' && errors[0].param=='password') {%> 
+                                <div class="form-control error">
+                                <% } else { %>
+                                    <div class="form-control">
+                                    <% } %> 
+                                <input type="password" name="password" id="password" placeholder="🔑  Contraseña" />
+                                <div id="reveal">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <% if (typeof errors != 'undefined') { %>
+                                    <% errors.forEach(function(error) { %>
+                                    <% if (error.param == 'password') { %>
+                                        <small><%= error.msg %></small>
+                                    <% } else { %>
+                                        <small></small>
+                                    <% } %>
+                                    <% })%>
+                                    <% } else { %>
+                                        <small></small>
+                                    <% } %> 
+                            </div>
+                            <div class="recordar">
+                                <input type="checkbox" name="recordar" id="recordar" value="recordar">
+                                <label for="recordar">Recordar mi usuario y contraseña</label>
+                            </div>
+                            <button type="submit">Iniciar sesión</button>
+                        </form>
+                        <div class="container-opciones">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <div class="container-opciones">
+                            <span>¿No tenés cuenta? </span><a href="/usuarios/registro">Registrate acá.</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- <% if (typeof errors !='undefined' ){%>
+                    <p> ERROR </p>
+                    <ul>
+                        <% for (let i=0; i< errors.length; i++){ %>
+                            <li>
+                                <%= errors[i].msg %>
+                            </li>
+                            <%}%>
+                    </ul>
+                    <% } %> -->
+                <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

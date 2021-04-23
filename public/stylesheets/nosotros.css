@@ -1,0 +1,73 @@
+.nosotros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: rgb(220, 220, 220, 0.3);
+}
+
+.container-nosotros {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border: 0.5px solid rgba(0, 0, 0, .1);
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .05);
+  overflow: hidden;
+  width: 1500px;
+  margin: 150px auto;
+  padding: 40px 30px;
+}
+
+.nosotros-text,
+.nosotros-img {
+  flex-grow: 0.45;
+}
+
+.nosotros-text {
+  width: 50%;
+}
+
+.nosotros-text h1,
+.categories {
+  margin: 2% 2% 2% auto;
+}
+
+div.categorias {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.categoria-regalo {
+
+  background-color: #18A0FB;
+  width: 200px;
+  height: 50px;
+  margin: 1%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  object-fit: scale-down;
+  border-radius: 12px;
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 10%);
+}
+
+.categoria-regalo a {
+  text-decoration: none;
+  color: white;
+}
+
+.categoria-link {
+  color: white;
+  font-size: 0.8em;
+  font-family: 'Montserrat-SemiBold';
+
+}
+
+/* p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+} */

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Registro"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js" integrity="sha512-vZEoK8xRncku4g5GANHh5zobUjeCMbZkSEahrADeAcRlk/1Ignf8sAKojkV4RZLkPw145+ILJFisI2pnjsPtGQ==" crossorigin="anonymous"></script>
+    <script src="/javascript/validationregister.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- header del Sitio -->
+
+    <%- include("../partials/header.ejs") %>
+
+
+    <section class="register">
+        <div class="container-register">
+           
+            <p class="titulo-register">Bienvenido a</p>
+            
+            <div class="container-logo-register">
+                <img src="/images/logo-reegalo-blue.png" alt="" class="logo-register">
+            </div>
+
+           
+
+            <form id="form" class="form" method="POST" action="/usuarios/registro" enctype="multipart/form-data">
+              
+               <!-- Nombre y apellido -->
+
+               <% if (typeof errors != 'undefined' && errors[0].param=='name') {%> 
+                <div class="form-control error">
+                <% } else { %>
+                    <div class="form-control">
+                    <% } %> 
+                    <input type="text" name="name" id="name" placeholder="🧑  Nombre"  />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(function(error) { %>
+                        <% if (error.param == 'name') { %>
+                            <small><%= error.msg %></small>
+                        <% } else { %>
+                            <small></small>
+                        <% } %>
+                        <% })%>
+                        <% } else { %>
+                            <small></small>
+                        <% } %> 
+                </div>
+
+                 <!-- Apellido -->
+
+               <% if (typeof errors != 'undefined' && errors[0].param=='last_name') {%> 
+                <div class="form-control error">
+                <% } else { %>
+                    <div class="form-control">
+                    <% } %> 
+                    <input type="text" name="last_name" id="last_name" placeholder="🧑  Apellido"  />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(function(error) { %>
+                        <% if (error.param == 'last_name') { %>
+                            <small><%= error.msg %></small>
+                        <% } else { %>
+                            <small></small>
+                        <% } %>
+                        <% })%>
+                        <% } else { %>
+                            <small></small>
+                        <% } %> 
+                </div>
+
+
+
+                  <!-- Correo -->
+
+                  <% if (typeof errors != 'undefined' && errors[0].param=='email') {%> 
+                    <div class="form-control error">
+                    <% } else { %>
+                        <div class="form-control">
+                        <% } %> 
+                        <input type="email" name="email" id="email" placeholder="✉️  Correo electrónico" oninvalid="this.setCustomValidity('El email ingresado no es válido')" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <% if (typeof errors != 'undefined') { %>
+                            <% errors.forEach(function(error) { %>
+                            <% if (error.param == 'email') { %>
+                                <small><%= error.msg %></small>
+                            <% } else { %>
+                                <small></small>
+                            <% } %>
+                            <% })%>
+                            <% } else { %>
+                                <small></small>
+                            <% } %> 
+                    </div>
+
+                  <!-- Contrase;a -->
+                
+                <% if (typeof errors != 'undefined' && errors[0].param=='password') {%> 
+                    <div class="form-control error">
+                    <% } else { %>
+                        <div class="form-control">
+                        <% } %> 
+                    <input type="password" name="password" id="password" placeholder="🔑  Contraseña" />
+                    <div id="reveal">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(function(error) { %>
+                        <% if (error.param == 'password') { %>
+                            <small><%= error.msg %></small>
+                        <% } else { %>
+                            <small></small>
+                        <% } %>
+                        <% })%>
+                        <% } else { %>
+                            <small></small>
+                        <% } %> 
+                </div>
+                
+                <!-- Confirmacion contrase;a -->
+
+                <% if (typeof errors != 'undefined' && errors[0].param=='passwordRepeat') {%> 
+                    <div class="form-control error">
+                    <% } else { %>
+                        <div class="form-control">
+                        <% } %> 
+                    <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="🔑  Repetir contraseña" />
+                    <div id="reveal2">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(function(error) { %>
+                        <% if (error.param == 'passwordRepeat') { %>
+                            <small><%= error.msg %></small>
+                        <% } else { %>
+                            <small></small>
+                        <% } %>
+                        <% })%>
+                        <% } else { %>
+                            <small></small>
+                        <% } %> 
+                </div>
+
+
+                 <!--Perfil  -->
+
+                 <% if (typeof errors != 'undefined' && errors[0].param=='profile') {%> 
+                    <div class="form-control error">
+                    <% } else { %>
+                        <div class="form-control">
+                        <% } %>
+                    <input type="file" name="profile" id="profile" placeholder="📷  Imagen de perfil"  accept=".jpg,.jpeg,.png,.gif"/>
+                    <div class="profile-icon">📷</div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(function(error) { %>
+                        <% if (error.param == 'profile') { %>
+                            <small><%= error.msg %></small>
+                        <% } else { %>
+                            <small></small>
+                        <% } %>
+                        <% })%>
+                        <% } else { %>
+                            <small></small>
+                        <% } %> 
+                </div>
+         
+                
+
+                <div >
+                    <button type=“submit” class="boton-register">Registrarse</button>
+                </div>
+            </form>
+            <!-- <div class="boton-google">
+                <div class="logo-google">
+                    <img src="/images/logo-google.png" alt="Google" class="logo-google">
+                </div>
+                <p class="texto-google">Iniciar sesión con Google</p>
+            </div>
+            <div class="boton-facebook">
+                <div class="logo-facebook">
+                    <img src="/images/logo-facebook.png" alt="Facebook" class="logo-facebook">
+                </div>
+                <p class="texto-facebook">Iniciar sesión con Facebook</p>
+            </div> -->
+            <div class="ingresar">
+                <span>¿Tenés cuenta? </span><a href="/usuarios/login">Ingresá acá.</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer del Sitio -->
+
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

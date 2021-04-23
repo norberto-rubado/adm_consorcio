@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Contacto"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+
+    <!-- Header del Sitio -->
+
+    <%- include("../partials/header.ejs") %>
+
+    <section>
+        <div class="container-preguntas">
+            <div>
+                <h1>Preguntas Frecuentes</h1>
+            </div>
+            <div class="contenedor-preguntasyrespuestas">
+                <% questions_answers.forEach (function(pregunta) { %>
+                <div class="contenedor-cadapregunta">
+                        <div class="preguntayrespuesta"> 
+                              <p class="pregunta"><%= pregunta.question %> </p>
+                              <div class="respuesta"> <%= pregunta.answer %> </div>
+                    </div>
+                    
+
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer del Sitio -->
+
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+/****************** Formulario Login ************************/
+
+.login-success {
+    height: 50px;
+    background-color: var(--azulreegalo);
+    color: white;
+    padding-top: 1%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.3);
+}
+
+.container {
+	background-color: white;
+    border: 0.5px solid rgba(0,0,0,.1);
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.05);
+	overflow: hidden;
+	width: 600px;
+	max-width: 100%;
+}
+
+.header {
+    background-color: white;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+}
+
+p.titulo-login {
+    font-size: 1.5em;
+    font-family: Montserrat-SemiBold;
+    text-align: center;
+}
+
+.container-logo-login {
+    text-align: center;
+}
+
+.logo-login {
+    margin-top: 10px;
+    max-width: 250px;
+}
+
+.form {
+    padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control input {
+	display: block;
+	font-family: inherit;
+	font-size: 15px;
+	padding: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(211, 211, 211, 0.1);
+    border-radius: 6px;
+    border: 1px solid gainsboro;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: var(--azulreegalo);
+}
+
+.form-control.success input {
+	border-color: teal;
+}
+
+.form-control.error input {
+	border-color:tomato;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 12px;
+	right: 10px;
+}
+
+.form-control div i {
+	visibility: visible;
+	position: absolute;
+	top: 12px;
+	right: 40px;
+	opacity: 0.2;
+	cursor: pointer;
+}
+
+.form-control.success i.fa-check-circle {
+	color: teal;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: tomato;
+	visibility: visible;
+}
+
+.form-control small {
+	color: tomato;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form button {
+    background-color: var(--azulreegalo);
+	border: 1px solid var(--azulreegalo);
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 17px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.form button:hover {
+    background-color: var(--azulregalostrong);
+    cursor: pointer;
+}
+
+.recordar {
+    font-size: 15px;
+    text-align: left;
+}
+
+.container-opciones {
+    height: 30px;
+    font-size: 15px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.container-opciones a {
+    text-decoration: none;
+    color: var(--azulreegalo);
+    transition: color 0.3s ease 0s;
+}
+
+.container-opciones a:hover {
+    color: var(--azulregalostrong);
+    font-weight: bold;
+}

@@ -1,0 +1,58 @@
+/****************** Carrito ************************/
+
+.background {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.3);
+}
+
+.container {
+	width: 800px;
+    height: 300px;
+    max-width: 100%;
+    background-color: white;
+    border: 0.5px solid rgba(0,0,0,.1);
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.05);
+    display: flex;
+    flex-direction: row;
+    margin: 40px auto;
+}
+
+.container-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-navigation {
+    max-width: 100%;
+    max-height: 33.61px;
+    margin: 15px;
+}
+
+.empty-container {
+    width: 100%;
+}
+
+.empty-container a {
+    display: block;
+    color:black;
+    text-decoration: none;
+    font-size: larger;
+    text-align: center;
+    transition: color 0.3s ease 0s;
+}
+
+.empty-container a:hover {
+    color: var(--azulregalostrong);
+}
+
+.empty-message {
+    color: var(--azulreegalo);
+    padding: 50px;
+    width: 100%;
+    text-align: center;
+}

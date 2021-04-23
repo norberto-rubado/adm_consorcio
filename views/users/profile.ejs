@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Tu perfil" }) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+    <% if (typeof edit_success !='undefined' ) { %>
+    <div class="edit-success">
+        Tu perfil fue actualizado exitosamente.
+    </div>
+    <% } %>
+
+    <section class="container-profile">
+        <section class="left-panel">
+            <p>Tu imagen actual:</p>
+            <form action="/usuarios/<%= user.id %>/actualizarAvatar?_method=PUT" method="POST"
+                enctype="multipart/form-data">
+                <label for="file-input">
+                    <img src="/images/users/<%= user.image %>" class="user-profile-pic">
+                </label>
+                <input type="file" name="profile" id="file-input" />
+                <p style="margin-bottom: 2%;">Hacé click sobre la imagen para cambiarla.</p>
+                <div>
+                    <button type=“submit” class="boton">Guardar</button>
+                </div>
+                <div class="container-historial">
+                    <a href="http://localhost:3001/usuarios/historial"><i class="fas fa-shopping-cart"></i>Mis
+                        compras</a>
+                </div>
+            </form>
+
+        </section>
+        <section class="right-panel">
+            <form method="POST" action="/usuarios/<%= user.id %>/actualizar?_method=PUT" enctype="multipart/form-data"
+                class="edit-form">
+                <div class="container-field">
+                    <label for="first_name">Nombre: </label>
+                    <input type="text" name="first_name" id="first_name" value="<%= user.first_name %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Apellido: </label>
+                    <input type="text" name="last_name" id="last_name" value="<%= user.last_name %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Email: </label>
+                    <input type="email" name="email" id="email" value="<%= user.email %>">
+                </div>
+
+                <% if(user.rol=='admin') { %>
+                <div class="container-field">
+                    <label for="first_name">Rol: </label>
+                    <select name="rol" id="rol">
+                        <option value="admin" selected>Administrador</option>
+                        <option value="user">Usuario</option>
+                    </select>
+                </div>
+                <% } %>
+                <div class="container-field">
+                    <label for="first_name">Idioma: </label>
+                    <select name="language" id="language">
+                        <% if(user.language=='esp') { %>
+                        <option value="esp" selected>Español</option>
+                        <option value="eng">Inglés</option>
+                        <% } else { %>
+                        <option value="esp">Español</option>
+                        <option value="eng" selected>Inglés</option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Fecha de nacimiento: </label>
+                    <input type="date" name="brday" id="brday" value="<%= user.brday %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Pais: </label>
+                    <input type="text" name="country" id="country" value="<%= user.country %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Ciudad: </label>
+                    <input type="text" name="residence" id="residence" value="<%= user.residence %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Telefono: </label>
+                    <input type="text" name="phone" id="phone" value="<%= user.phone %>">
+                </div>
+                <div class="container-field">
+                    <label for="first_name">Tema: </label>
+                    <select name="dark_mode" id="dark_mode">
+                        <% if(user.dark_mode=='n') { %>
+                        <option value="n" selected>Claro</option>
+                        <option value="y">Oscuro</option>
+                        <% } else { %>
+                        <option value="n">Claro</option>
+                        <option value="y" selected>Oscuro</option>
+                        <% } %>
+                    </select>
+                </div>
+                <div>
+                    <button type=“submit” class="boton">Guardar</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

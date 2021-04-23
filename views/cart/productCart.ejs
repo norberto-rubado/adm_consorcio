@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Carrito"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/productCart.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+    <div class="background">
+        <div class="container">
+            <% if(items.length != 0){ %>
+            <div class="cart-content">
+                <table class="cart-product">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th>Detalle de producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <% items.forEach(function(item) { %>
+                        <tr>
+                            <td>
+                                <div class="product-details">
+                                    <div class="container-imagen">
+                                        <img src="/images/products/<%= item.products.product_image[0].image %>"
+                                            style='height: 100%; width: 100%; object-fit: cover'>
+                                    </div>
+                                    <div class="description"><%= item.products.name %></div>
+                                </div>
+                            </td>
+                            <td>
+                                <span><%= item.quantity %></span>
+                            </td>
+                            <td>
+                                <span>$<%= item.sale_price %></span>
+                            </td>
+                            <td>
+                                <form action="/carrito/borrar" method="POST">
+                                    <input type="hidden" name="item_id" id="item_id" value="<%= item.id %>">
+                                    <button type="submit" class="boton-eliminar">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="order-summary">
+                <table class="summary">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th>Total de la compra</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <div class="total">$<%= items.reduce((total, item) => total + item.subtotal, 0)%></div>
+                                <form action="/carrito/comprar" method="POST">
+                                    <input type="hidden" name="user_id" value="<%= locals.user.id %>">
+                                    <button type="submit" class="boton-guardar">Comprar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+            <div class="empty-container">
+                <h2 class="empty-message">Todavia no agregaste productos al carrito</h2>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

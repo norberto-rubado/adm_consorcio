@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Contacto"}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/contacto.css">
+</head>
+
+<body>
+
+    <!-- Header del Sitio -->
+
+    <%- include("../partials/header.ejs") %>
+
+    <section class="login">
+        <div class="container">
+            <div class="header">
+                <p class="titulo-login">Contactanos</p>
+                <div class="container-logo-login">
+                    <img src="/images/logo-reegalo-blue.png" alt="" class="logo-login">
+                </div>
+            </div>
+            <form action="/usuarios/login" method="POST" class="form" id="form" novalidate>
+                <p class="intro">Completa el siguiente formulario con tus datos para que podamos ayudarte</p>
+                <div class="form-control">
+                    <input type="email" name="email" id="email" placeholder="✉️  Correo electrónico" />
+                </div>
+                <div class="form-control">
+                    <input type="text" name="name-consulta" id="nombre-consulta" placeholder="🧑  Nombre y Apellido">
+                </div>
+                <div class="form-control">
+                    <input name="consulta" id="consulta" placeholder="❓  Tu consulta">
+                </div>
+                <button type="submit">Continuar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer del Sitio -->
+
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

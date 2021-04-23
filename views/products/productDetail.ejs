@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs", {title: "Reegalo - Detalle del Producto" }) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/productDetail.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.1.17/validator.min.js"></script>
+    <script src="/javascript/productdetail.js"></script>
+</head>
+
+<body>
+
+    <!-- Header del Sitio -->
+
+    <%- include("../partials/header.ejs") %>
+
+    <main class="principal">
+
+        <div class="producto">
+
+            <div class="informacion_producto">
+
+                <div class="texto_producto">
+                    <p class="informacion_producto_1 titulo">
+                        <%= product.name %>
+                    </p>
+                </div>
+                <div class="imagenes_producto">
+                    <!--                     <i class="fas fa-chevron-left"></i> -->
+                    <!--                     <article class="imagen_producto">
+                        <img class="imagen_ubicacion"
+                            src="/images/products/<%# if (product_images[1] == undefined) {%><%#=product_images[0].image%><%# } else { %><%#=product_images[1].image%><%# } %>"
+                            alt="Imagen 1">
+                    </article> -->
+                    <article class="imagen_producto_medio">
+                        <img src="/images/products/<%= product_images[0].image %>" class="img_producto" alt="Imagen 2">
+                    </article>
+                    <!--                     <article class="imagen_producto">
+                        <img src="/images/products/<%# if (product_images[2] == undefined) {%><%#=product_images[0].image%><%# } else { %><%#=product_images[2].image%><%# } %>"
+                            alt="Imagen 3">
+                    </article> -->
+                    <!--                     <i class="fas fa-chevron-right"></i> -->
+                </div>
+                <div class="estrella_producto">
+                    <div class="calificacion_producto"> 4.7 </div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="texto_producto">
+                    <div class="informacion_producto_2">
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resumen_producto">
+                <div class="resumen_compra">
+                    <h3 class="titulo_resumen">
+                        <%= product.categories.description %>
+                    </h3>
+                    <div class="resumen_informacion">
+                        <div class="informacion_1">
+                            <div class="imagen_informacion">
+                                <i class="fas fa-star"></i>
+                                <span class="opiniones_texto">
+                                    <%= promedio_calificacion %>
+                                </span>
+                            </div>
+                            <div class="texto_informacion">
+                                <span class="opiniones_texto">(<%= cantidad_comentarios %>)</span>
+                                <span class="opiniones_texto"> Opiniones</span>
+                            </div>
+                        </div>
+                        <div class="informacion_1">
+                            <div class="imagen_informacion">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="texto_informacion">
+                                <span class="opiniones_texto">
+                                    <%= product.share %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="informacion_1">
+                            <div class="imagen_informacion">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="texto_informacion">
+                                <span class="opiniones_texto">Vencimiento: <%= product.expiration_days %>
+                                    dias</span>
+                            </div>
+                        </div>
+                        <div class="informacion_1">
+                            <div class="imagen_informacion">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="texto_informacion">
+                                <span class="opiniones_texto_chico">57 veces regalado durante los ultimos
+                                    dias</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio">
+                        <span class="texto_precio">$ <%= (product.price * (1 - (product.discount / 100))).toFixed(0)
+                                    %></span>
+                        <a class="texto_ver_cuotas" href="#">Ver cuotas</a>
+                    </div>
+
+                    <div class="envios">
+                        <span class="texto_envios">Envios Gratis</span>
+                        <img class="imagenes_envio" src="/images/whatsapp_reegalo.png" alt="Icono 1">
+                        <img class="imagenes_envio" src="/images/mail_reegalo.png" alt="Icono 2">
+                        <img class="imagenes_envio" src="/images/take_away_reegalo.png" alt="Icono 3">
+                    </div>
+                    <div class="formas_envios">
+                        <span class="texto_formas_envios">Consultar formas de Envio</span>
+                        <img class="imagenes_envio" src="/images/delivery_reegalo.png" alt="Icono 4">
+                    </div>
+
+                    <div class="medios_pago">
+                        <div class="medios_pago_centrada">
+                            <img src="/images/medios_pago.png" alt="Icono medios">
+                        </div>
+                    </div>
+                </div>
+
+                <form action="/carrito/agregar" method="POST">
+                    <div class="cantidad">
+                        <div class="cantidad_centrada">
+                            <img id="imagen_cantidad_menos" class="imagen_cantidad_menos" src="/images/restar.svg"
+                                alt="Icono menos">
+                            <input type="number" id="quantity" name="quantity" value=1 readonly class="cantidad_numero">
+                            <img id="imagen_cantidad_mas" class="imagen_cantidad_mas" src="/images/sumar.svg"
+                                alt="Icono mas">
+                        </div>
+                    </div>
+                    <input type="hidden" name="product_id" value="<%= product.id %>">
+                    <div class="compra">
+                        <div class="compra_centrada">
+                            <button class="compra_boton" type="submit">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="texto_mapa">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="texto_ubicacion"> Texto de la ubicacion </div>
+        </div>
+
+        <div class="contenedor_mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5526.579005915002!2d-58.48214326640053!3d-34.55042737556069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb696ab5cb4ed%3A0x887c745720a0e9b6!2sParque%20Saavedra!5e0!3m2!1ses!2sar!4v1602271684399!5m2!1ses!2sar"
+                class="mapa" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+
+        <section class="contenedor_opiniones">
+
+            <div class="opiniones">
+                <span class="opiniones_titulo">Total Opiniones</span>
+                <span class="opiniones_total">(<%= cantidad_comentarios %>)</span>
+                <span class="opiniones_promedio">
+                    <%= promedio_calificacion %>
+                </span>
+                <div class="estrellas">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <% product_comments.forEach (function(item) { %>
+
+            <article class="contenedor_comentario">
+                <div class="comentario_usuario">
+                    <div class="usuario">
+                        <%= item.users.first_name%>
+                    </div>
+                    <div class="estrellas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="comentario">
+                    <p>
+                        <%= item.comment%>
+                    </p>
+                </div>
+            </article>
+
+            <% }) %>
+
+            <div class="mas_opiniones">
+                <a class="texto_mas_opiniones" href="#">Carga mas opiniones</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer del Sitio -->
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+/****************** Carrito ************************/
+
+.background {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+    margin: 0;
+    background-color: rgb(220, 220, 220, 0.3);
+}
+
+.container {
+	width: 800px;
+    max-width: 100%;
+    background-color: white;
+    border: 0.5px solid rgba(0,0,0,.1);
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.05);
+    display: flex;
+    flex-direction: row;
+    margin: 40px auto;
+}
+
+.cart-content {
+    border-right: 0.5px solid rgba(0,0,0,.1);
+    flex-grow: 2;
+}
+
+.cart-product {
+    padding: 10px;
+    width: 100%;
+}
+
+.cart-product th {
+    font-family: Montserrat-SemiBold;
+    border-bottom: 0.1px solid rgb(219, 219, 219, 0.3);
+}
+
+.cart-product th,
+.cart-product td {
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-imagen {
+    width: 120px;
+    height: 120px;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.05);
+}
+
+.description {
+    margin: 0px 20px;
+}
+
+.order-summary {
+    flex-grow: 1;
+    padding: 10px;
+    align-items: center;
+}
+
+.summary {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.summary th {
+    font-family: Montserrat-SemiBold;
+    border-bottom: 0.1px solid rgb(219, 219, 219, 0.3);
+}
+
+.summary th,
+.summary td {
+    text-align: center;
+    padding: 12px 15px;
+}
+
+td div.total {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--azulreegalo);
+    font-family: Montserrat-Bold;
+    font-size: xx-large;
+}
+
+.container-categoria {
+    background-color: rgb(220, 220, 220, 0.3);
+}
+
+.boton-eliminar{
+    background-color: tomato;
+    border: none;
+    width: 80px;
+    height: 25px;
+    font-size: 0.75em;
+    border-radius: 4px;
+    color: white;
+}
+
+.boton-eliminar:hover {
+    background-color: crimson;
+    cursor: pointer;
+}
+
+.boton-guardar {
+    background-color: var(--azulreegalo);
+    border: none;
+    width: 120px;
+    height: 30px;
+    font-size: 1em;
+    border-radius: 4px;
+    color: white;
+}
+
+.boton-guardar:hover {
+    background-color: var(--azulregalostrong);
+    cursor: pointer;
+}
+
+.empty-container {
+    width: 100%;
+}
+
+.empty-message {
+    color: var(--azulreegalo);
+    padding: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+/****************** Recomendados ************************/
+
+.recomendados-titulo {
+    font-family: Montserrat-SemiBold;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.productos-recomendados {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.ficha-producto {
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left; 
+    padding: 1%;
+    margin: 1%;
+    
+}
+
+.container-imagen-ficha {
+    width: 100%;
+    cursor: pointer;
+}
+
+.imagen-ficha {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    opacity: 0.4;
+}
+
+.imagen-ficha:hover {
+    opacity: 1;
+}
+
+.detalle-ficha {
+    width: 100%;
+}
+
+.titulo-regalo {
+    font-size: 1.2em;
+    font-family: Montserrat-SemiBold;
+    max-width: 350px;
+    margin: 4% 0;
+    white-space: nowrap;  /* Colapsa todo el texto excedente en un espacio en blanco */
+    overflow: hidden; /* Oculta el exceso de texto */
+    text-overflow: ellipsis; /* Esto es para que el titulo se acorte y queden ... al final */
+}
+
+.detalle-regalo {
+    color:lightgray;
+    font-size: 1em;
+    font-family: Montserrat-Regular;
+    margin: 4% auto;
+}
+
+.puntuacion-ficha {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 2% auto;
+}
+
+.fa-star {
+    color:gold;
+    font-size: 1.2em;
+}
+
+.puntuacion {
+    font-family: Montserrat-SemiBold;
+    margin-right: 1%;
+}
+
+.acciones-ficha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2% 0;
+    width: 100%;
+}
+
+.boton-detalle {
+    background-color: white;
+    color: var(--azulreegalo);
+    text-align: center;
+    padding: 1.5% 0;
+    width: 150px;
+    border: 1px solid var(--azulreegalo);
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.boton-detalle:hover {
+    color: var(--azulregalostrong);
+    border: 1px solid var(--azulregalostrong);
+}
+
+.boton-comprar {
+    background-color: var(--azulreegalo);
+    color: white;
+    text-align: center;
+    padding: 1.5% 0;
+    width: 150px;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.boton-comprar:hover {
+    background-color: var(--azulregalostrong);
+}

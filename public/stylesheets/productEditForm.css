@@ -1,0 +1,331 @@
+
+
+/* Formulario Edicion producto  */
+
+section.edicion-producto {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(220, 220, 220, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+div.container-producto {
+    width: 80%;
+    background-color: #FFFFFF;
+    margin: 1% 3%;
+    padding: 2% 6%;
+    border: 0.5px solid rgba(0,0,0,.1);
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+p.titulo-producto {
+    font-size: 1.5em;
+    font-family: Montserrat-SemiBold;
+    text-align: center;
+}
+
+.container-logo-producto {
+    width: 100%;
+    height: 2em;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.logo-producto {
+    max-width: 45%;
+    max-height: 100%;
+}
+
+.form-producto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-linea-texto {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-linea-texto_error {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.error {
+    margin-left: 3px;
+    font-size: 1em;
+    color:tomato;
+}
+
+.linea-compartida {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-linea-compartida-1 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-linea-compartida-2 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-linea-compartida-imagen {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-label {
+    text-align:left;
+    font-size: 1em;
+    margin: 10px 0;
+    width:15%;
+}
+
+.form-label-compartido {
+    text-align:left;
+    font-size: 1em;
+    margin: 10px 0;
+    width:40%;
+    display: flex;
+    align-items: center;
+}
+.form-input {
+    background-color: rgb(211, 211, 211, 0.2);
+    border-radius: 6px;
+    border: 1px solid gainsboro;
+    padding: 1.2%;
+    margin: 0%;
+    width: 84%;
+    font-size: 1em;
+    display: flex;
+}
+
+.form-input-compartido {
+    background-color: rgb(211, 211, 211, 0.2);
+    border-radius: 6px;
+    border: 1px solid gainsboro;
+    padding: 1.2%;
+    margin: 0%;
+    width: 60%;
+    font-size: 1em;
+    display: flex;
+}
+
+textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+    padding: 15px;
+}
+
+.form-input-imagen {
+    background-color: rgb(211, 211, 211, 0.2);
+    border-radius: 6px;
+    border: 1px solid gainsboro;
+    padding: 1.2%;
+    margin: 1%;
+    width: 100%;
+    font-size: 1em;
+    display: flex;
+}
+
+.boton-producto {
+    width: 100%;
+    height: 50px;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.boton-guardar {
+    background-color: var(--azulreegalo);
+    border: none;
+    width: 30%;
+    height: 100%;
+    font-size: 1.2em;
+    border-radius: 8px;
+    color: white;
+}
+
+.boton-guardar:hover {
+    background-color: var(--azulregalostrong);
+}
+
+.boton-eliminar{
+    background-color: tomato;
+    border: none;
+    width: 30%;
+    height: 100%;
+    font-size: 1.2em;
+    border-radius: 8px;
+    color: white;
+}
+
+.boton-eliminar:hover {
+    background-color: #D53614;
+}
+
+.imagen-producto-contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.imagen-producto {
+    width:19%;
+    margin: 2% 0.5% 0% 0.5%;
+    height: 120px;
+    border-radius: 6px;
+}
+
+/* Media Queries  */
+
+/* Mobile S  */
+
+@media (max-width: 320px) {
+    
+    p.titulo-producto {
+        font-size: 1em;
+    }
+
+    .container-logo-producto, .divisor, .ingresar {
+        height: 2em;
+    }
+
+    .form-input, .container-password-producto, .container-password-repeat, .container-fecha-nacimiento {
+        font-size: 1.5em;
+    }
+
+    .boton-producto {
+        width: 100%;
+        font-size: 0.7em;
+        height: 40px;
+    }
+}
+
+/* Mobile L */
+
+@media (max-width: 425px) {
+
+    div.container-producto{
+        margin: 3% 2%;
+    }
+
+    .boton-producto {
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+/* Mobile L  */
+
+@media (max-width: 1000px) {
+
+    p.titulo-producto {
+        font-size: 1.2em; 
+    }
+
+    .form-linea-texto {
+        margin: 2% 4% 0% 4%;
+        flex-direction:column;
+        align-items: flex-start;
+    }
+
+    .linea-compartida {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .form-linea-compartida-1 {
+        width: 100%;
+    }
+
+    .form-linea-compartida-2 {
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    .form-label {
+        font-size: 0.8em;
+    }
+
+    .form-label-compartido {
+        font-size: 0.8em;
+    }
+
+    .form-input {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    .form-input-compartido {
+        font-size: 0.8em;
+    }
+
+    .form-input-imagen {
+        font-size: 0.8em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    .boton-guardar, .boton-eliminar {
+        font-size: 0.9em;
+    }
+
+    textarea.form-input {
+        width: 100%;
+    }
+
+    .imagen-producto-contenedor {
+        width: 50%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .imagen-producto {
+        width:100%;
+        margin: 3% 0.5% 0% 0.5%;
+    }
+
+    .error {
+        font-size: 0.8em;
+    }
+
+}
+
+/* Tablet  */
+
+@media (max-width: 992px) {
+
+    div.container-producto {
+        width: 768px;
+    }
+}
